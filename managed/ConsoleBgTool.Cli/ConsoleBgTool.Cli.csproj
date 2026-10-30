@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <AssemblyName>ConsoleBgTool</AssemblyName>
+    <RootNamespace>ConsoleBgTool.Cli</RootNamespace>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <!-- The native DLLs are copied next to the executable by scripts/build-native.ps1. -->
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ConsoleBgTool.Interop\ConsoleBgTool.Interop.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--
+      The test project asserts the behaviour of internal types such as RegistryReport and the
+      command implementations. Opening them to that one assembly keeps the public surface of the CLI
+      minimal without forcing a test-only API.
+    -->
+    <InternalsVisibleTo Include="ConsoleBgTool.Tests" />
+  </ItemGroup>
+
+</Project>

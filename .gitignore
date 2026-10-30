@@ -1,0 +1,20 @@
+# Build output. Everything here is reproducible from the sources with scripts/build.ps1.
+build/
+dist/
+**/bin/
+**/obj/
+
+# IDE and tooling scratch
+.vs/
+.vscode/
+*.user
+*.suo
+*.nupkg
+
+# Local project knowledge base (never part of the product)
+.reinforcer/
+
+# OS noise
+Thumbs.db
+Desktop.ini
+.DS_Store
