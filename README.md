@@ -1,3 +1,5 @@
+#注意
+此项目由AI生成，维护很少
 # ConsoleBgTool
 
 修改 **cmd.exe** 与 **Windows PowerShell** 控制台背景的 Windows 工具。参考 [Maplespe/explorerTool](https://github.com/Maplespe/explorerTool) 修改资源管理器背景的思路，但控制台的实现方式与资源管理器**完全不同** —— 本节第 2 部分记录了在真实 Windows 11 上实测得到的关键结论。
